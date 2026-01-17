@@ -1,0 +1,44 @@
+<!Doctype html>
+<html>
+    <head><title>Order-form</title></head>
+    <body>
+        <h1>Inventory Order Request Form</h1>
+        <p>Please fill out the details below to submit a new product order request. </p>
+        <form>
+        <fieldset>
+       <legend>Client Information</legend>
+    </body> <p>Client name:<input type="text" id="client_name"></p>
+        <p>Client Email:<input type="text" id="client_email"></p>
+        <p>Required Date:<input type="date" id="req_date"></p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Order details</legend>
+                <p>Product Quantity:<input type="number"></p>
+                <p>Shipping Method:<br><input type="radio" >Standard(3-5 Days)<br>
+                                    <input type="radio" >Express(1-2 Days)
+                                </p>
+                <p>Special Instructions:<br><textarea cols="40"></textarea>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Optional Services</legend>
+            <p>Select ant additional services required (optional):<br><br>
+                <input type="checkbox">Gift Wrapping(Rs.200.00) <br>
+                <input type="checkbox">Fragile handling<br>
+                <input type="checkbox">Signature Required on Delivery<br>
+        </fieldset>
+<hr>
+ <input type="submit" value="Submit Order Request">
+  <input type="reset" value="Clear Form">
+
+
+
+
+
+
+
+
+
+</form>
+</html>
