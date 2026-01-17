@@ -87,12 +87,12 @@
 }
 .content button{
     font-weight: bold;
-    font-size: 35px;
+    font-size: 30px;
     margin-top: 30px;
     background-color: black;
     color: white;
     border-radius: 42px;
-    padding:18px 18px;
+    padding:20px 20px;
     margin-left: 150px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
@@ -149,6 +149,10 @@
     color: white;
     overflow: hidden;
 }
+.promo-card:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* shadow on hover */
+    transform: translateY(-3px); /* optional: lift the button slightly */
+}
 .promo-text span {
     font-size: 18px;
     opacity: 0.9;
@@ -168,6 +172,15 @@
     cursor: pointer;
     background-color: white;
     color: black;
+    font-size: 20px;
+    margin-left: 0px;
+    box-shadow: white 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.promo button:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px rgb(255, 255, 255); /* shadow on hover */
+    transform: translateY(-3px); /* optional: lift the button slightly */
 }
 .promo-card img {
     width: 150px;
@@ -188,7 +201,7 @@
 .promo-head {
     color: black;
     font-size: 50px;
-    margin-top:40px;
-    margin-bottom: 80px;
+    margin-top:80px;
+    margin-bottom: 60px;
     font-weight: bold;
 }
