@@ -289,3 +289,9 @@
     margin-left: 0px;
     color: rgb(0, 0, 0);
 }
+.size-image {
+    width:600px;
+    height:auto;
+    margin-top: 50px;
+    align-content: center;
+}
