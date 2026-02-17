@@ -1,6 +1,7 @@
 *{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; /* Added for better sizing control */
 }
 .grid-container{
     display:grid;
@@ -51,6 +52,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0; /* consistent padding */
+    margin: 0;
 }
 
 .nav-bar li {
@@ -93,15 +96,19 @@
     color: white;
     border-radius: 42px;
     padding:20px 20px;
-    margin-left: 150px;
+    /* margin-left: 150px; Removed fixed margin for better control */
+    margin-left: 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 .content button:hover{
     background-color: white;
     color: black;
 }
 .content img{
-    width: 600px;
+    width: 100%; /* Make responsive */
+    max-width: 600px;
+    height: auto;
 }
 .subhead-wrapper {
     display: flex;             
@@ -110,20 +117,29 @@
     gap: 40px;
     margin-top: 0px;
     background-color: rgb(230, 230, 230);
-    margin-right: 300px;
+    /* margin-right: 300px; Removed large fixed margin */
+    margin-right: 0;
     border-radius: 30px;
+    padding: 40px; /* Added padding inside wrapper */
 }
 .subhead-wrapper img{
-    padding: 80px;
-    width:800px;
+    padding: 0; /* Adjusted padding */
+    width: 50%;
+    max-width: 800px;
     height: auto;
     margin-right:0 ;
 }
+.subhead-wrapper .text-area {
+    width: 50%;
+    padding-left: 20px;
+}
+
 .subhead-wrapper p{
     text-align: left;
     margin-top: 0px;
     margin-bottom: 20px;
-    margin-left:150px ;
+    /* margin-left:150px ; Removed fixed margin */
+    margin-left: 0;
     
 }
 
@@ -138,7 +154,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-top: 80px;
-    margin-right: 300px;
+    /* margin-right: 300px; Removed large fixed margin */
+    margin-right: 0;
     
 }
 .promo-card {
@@ -220,7 +237,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin-top: 50px;
-    margin-right: 100px;
+    /* margin-right: 100px; Removed fixed margin */
+    margin-right: 0;
     
 
 }
@@ -243,11 +261,16 @@
     padding-bottom: 60px;
 }
 .arrival-grid img{
-    width:400px;
-    height:600px;
+    width: 100%;
+    max-width:400px;
+    height: auto;
+}
+.arrival-text{
+    width: 100%;
+    text-align: center;
 }
 .arrival-text p{
-    font-size:40px;
+    font-size:30px; /* Reduced from 40px */
     align-items: center;
     justify-content: center;
     background-color: black;
@@ -289,9 +312,157 @@
     margin-left: 0px;
     color: rgb(0, 0, 0);
 }
+.size-chart {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
 .size-image {
-    width:600px;
+    width: 100%;
+    max-width:600px;
     height:auto;
     margin-top: 50px;
     align-content: center;
+}
+.size-image img {
+    width: 100%;
+    height: auto;
+}
+.size-details {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* --- Mobile Responsiveness --- */
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-areas: 
+            "header"
+            "content"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar on mobile if it's empty, or move it to bottom */
+    }
+
+    .promo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-bar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-bar a {
+        padding: 10px;
+    }
+
+    .subhead-wrapper {
+        flex-direction: column-reverse;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .subhead-wrapper .text-area, 
+    .subhead-wrapper img {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .subhead-wrapper img {
+        padding: 0;
+    }
+
+    .subhead-wrapper p {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .head {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+    
+    .subhead {
+        font-size: 18px;
+    }
+    
+    .content button {
+        margin-left: 0;
+        font-size: 20px;
+    }
+    
+    .promo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .arrival-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .promo-head, .Arrival-head, .size-head {
+        font-size: 32px;
+        margin-top: 40px;
+        text-align: center;
+    }
+    
+    .promohead-text, .newarrival-text, .size-text {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .promo-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .promo-card img {
+        margin-top: 20px;
+    }
+    
+    .promo-text button {
+        margin: 15px auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 140px;
+    }
+    
+    .nav-bar a {
+        font-size: 14px;
+    }
+    
+    .head {
+        font-size: 28px;
+    }
+    
+    .arrival-text p {
+        font-size: 20px;
+    }
 }
